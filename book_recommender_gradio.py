@@ -112,7 +112,8 @@ with gr.Blocks(theme = gr.themes.Ocean()) as dashboard:
         submit_btn = gr.Button("Recommend me books")
         
     gr.Markdown("## You'll love these books")
-    output = gr.Gallery(label="Recommended books",columns = 3,rows = 2)  #we show 6 books
+    output = gr.Gallery(label="Recommended books",columns = 3,rows = 2, 
+                        object_fit="contain")  #we show 6 books
     
     submit_btn.click(fn = recommend_books,
                      inputs = [user_query,category_dr,tone_dr],
